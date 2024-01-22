@@ -1,0 +1,311 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-size: 18px;
+    font-family: "Lato", sans-serif;
+}
+
+.header{
+    height: 100vh;
+    color: white;
+    position: relative;
+}
+.logo{
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.primary-nav{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    padding: 12px 40px;
+}
+
+.ul-nav{
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.li-nav{
+    font-size: 80%;
+    font-weight: 700;
+}
+
+.video-header{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: 40% 10%;
+    z-index: -100;
+    filter: grayscale()
+}
+
+.first-wrapper{
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+.header-section, .grote-collectie-section{
+    position: absolute;
+    bottom: 0px;
+    padding: 25px 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.heading-h3, .items-h3{
+    font-size: 80%;
+    font-weight: 300;
+}
+.heading-h2, .items-h2{
+    font-size: 180%;
+    font-weight: 700;
+}
+.items-h2{
+    font-size: 130%;
+}
+
+.secondary-wrapper{
+    display: flex;
+    gap: 25px;
+}
+
+.button-primary, .button-secondary{
+    font-size: 85%;
+    font-weight: 300;
+    border-radius: 100px;
+    width: 150px;
+    background: white;
+    border: none;
+    padding: 10px 0;
+    cursor: pointer;
+    transition: 200ms all;
+}
+
+.button-secondary{
+    background: transparent;
+    text-transform: uppercase;
+    border: 1px solid white;
+    color: white;
+    cursor: pointer;
+}
+
+.button-primary:hover{
+    background-color: black;
+    color: white;
+}
+
+.button-secondary:hover{
+    background: white;
+    color: black;
+    cursor: pointer;
+}
+
+
+.search{
+    font-size: 85%;
+    font-weight: 300;
+    border-radius: 100px;
+    padding: 12px 20px;
+    width: 280px;
+    background: transparent;
+    border: 1px solid white;
+    outline: 0;
+    color: white;
+}
+
+.searchWrapper{
+    position: relative;
+}
+
+.icon-in-button{
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    padding-right: 20px;
+}
+
+.button-icon, .button-on-wide-screen{
+    display: none;
+    font-size: 120%;
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.button-on-wide-screen{
+    display: block;
+}
+
+.onze-producten{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 40px;
+}
+
+.items{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.items-h3{
+    color: #585858;
+    font-size: 70%;
+}
+
+.products{
+    display: flex;
+    list-style: none;
+    gap: 5px;
+}
+.product{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: 600px;
+    width: 25%;
+}
+.product-figure{
+    width: 100%;
+    height: 80%;
+    overflow: hidden;
+}
+
+.img-product{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 200ms;
+}
+.product-h4{
+    font-size: 80%;
+    font-weight: 400;
+}
+
+.product-h5{
+    font-size: 75%;
+    font-weight: 400%;
+    color: #585858;
+}
+
+.product-label{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: white;
+    color: #585858;
+    padding: 10px;
+    border-radius: 100px;
+    font-size: 60%;
+    transform: scaleX(0);
+    transition: 200ms;
+    transform-origin: left;
+}
+
+.product:hover{
+    cursor: pointer;
+}
+.product:hover .img-product{
+    transform: scale(1.2);
+
+}
+.product:hover .product-label{
+    transform: scaleX(1);
+}
+
+.enkele-collectie:hover img{
+    transform: scale(1.2);
+}
+
+.grote-collectie{
+    height: 70vh;
+    background: blue;
+    position: relative;
+    color: white;
+    background: url(/img/pexels-sebastiaan-stam-1097456.jpg);
+    background-size: cover;
+    background-position: center;
+    filter: saturate(60%);
+    margin-bottom: 20px;
+}
+
+.collecties{
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    color: white;
+    padding: 40px;
+    list-style: none;
+    gap: 20px; 
+}
+
+.enkele-collectie{
+    position: relative;
+    overflow: hidden;
+}
+
+.enkele-collectie img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(70%);
+    transition: 0.6s all;
+}
+
+@media screen and (max-width: 1000px) {
+    .li-nav, .searchWrapper, .button-secondary, .button-on-wide-screen{
+        display: none;
+    }
+    .primary-nav, .header-section{
+        padding: 10px 40px;
+        padding-bottom: 20px;
+    }
+    .button-icon {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 1600px) {
+    .products{
+        flex-wrap: wrap;
+    }
+    .product{
+        width: 550px;
+        flex-grow: 1;
+    }
+}
+@media screen and (max-width: 1200px) {
+    .products{
+        flex-wrap: wrap;
+    }
+    .product{
+        width: 500px;
+        height: auto;
+        flex-grow: 1;
+    }
+
+    .collecties{
+        grid-template-columns: 100%;
+        height: 2000px;
+        gap: 0;
+    }
+
+    .enkele-collectie:hover img{
+        transform: scale(1);
+    }
+}
